@@ -72,7 +72,13 @@ public class TestImdb {
 
 	private void validateStartsExist(String star1, String star2, String star3) {
 		WebElement starContainer = driver.findElement(By.className("credit_summary_item"));
-		WebElement star1Element = starContainer.findElement(By.xpath());
+		WebElement star1Element = starContainer.findElement(By.xpath(".//*[contains(text(), '" + star1 + "')]"));
+		System.out.println("Found star1: " + star1Element.isDisplayed());
+		WebElement star2Element = starContainer.findElement(By.xpath(".//*[contains(text(), '" + star2 + "')]"));
+		System.out.println("Found star2: " + star2Element.isDisplayed());
+		WebElement star3Element = starContainer.findElement(By.xpath(".//*[contains(text(), '" + star3 + "')]"));
+		System.out.println("Found star3: " + star3Element.isDisplayed());
+		
 	}
 	
 
